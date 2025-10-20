@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Game</title>
+  <link rel="stylesheet" href="phase3.css" />
+</head>
+
+<body>
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="back2.mp4" type="video/mp4" />
+    Ton navigateur ne supporte pas la vidéo HTML5.
+  </video>
+  <!-- Top Bar -->
+  <!-- Logo Section (Center) -->
+  <div class="logo-container">
+    <img src="csi.png" class="logo" />
+  </div>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Left Side: Teams and Question -->
+    <div class="main-right">
+      <!-- Teams Section -->
+      <div class="teams-section">
+        <div id="teamButtons">
+          <!-- Teams will be generated here -->
+        </div>
+      </div>
+
+      <!-- Question Container -->
+      <section class="question-container">
+        <div style="margin-top: -12%;">        <h1 >Finale 2</h1>
+        </div>
+        <!-- Winners and Losers Section -->
+        <!-- Winners and Losers Section -->
+        <div id="resultsSection" class="results-section hidden">
+          <div class="winners">
+            <h3>Winner:</h3>
+            <ul id="winnerList">
+              <!-- Winners will be listed here -->
+            </ul>
+          </div>
+          <div class="losers">
+            <h3>Losers:</h3>
+            <ul id="loserList">
+              <!-- Losers will be listed here -->
+            </ul>
+          </div>
+        </div>
+
+        <!--displayed questions-->
+
+        <h1 id="questionTitle" class="hidden">Question #1: Sample question goes here</h1>
+
+        <!--pass and validate buttons-->
+        <div class="buttons-row">
+          <button id="nextQuestionBtn" class="btn pass-btn">Pass</button>
+          <button id="validateNextBtn" class="btn validate-btn">
+            Validate
+          </button>
+          <button id="nextRoundBtn" onclick="window.location.href='3.html'" class="btn pass-btn">
+            Next round
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- Right Side: Timer and Scoreboard -->
+    <div class="timer-scoreboard-container">
+      <div class="timer-section">
+        <div class="timer-display">
+          <!-- the samll rest button, you can change the image if u didnt like it-->
+          <button id="resetTimer" class="tiny-reset" title="Quick Reset">
+            <img src="reset.png" width="30px" height="30px" alt="" />
+          </button>
+          <div class="timer-circle-wrapper">
+            <!-- timer circle-->
+            <div class="timer-circle">
+              <span id="timer">15</span>
+              <!-- timer text will change using js-->
+            </div>
+          </div>
+
+          <button id="startStopBtn" class="btn-timer">Goo!!</button>
+          <!-- start and stop button-->
+        </div>
+      </div>
+
+      <!-- Scoreboard -->
+      <section class="scoreboard">
+        <h2>Résultats</h2>
+        <ul id="teamList">
+          <!-- Team scores will be generated here -->
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  
+
+  <!-- NOTEEEE  this is not implimented yet-->
+  <!-- Tie pop up diaglog, hidden then will appear using js-->
+  <div id="upTie" class="overlay hidden">
+    <div class="popupTie">
+      <h3 id="TieMessage" class="title"></h3>
+      <!-- will be filled using js to show the teams-->
+      <!--button to go to the other page-->
+      <button class="next-button" onclick="window.location.href='page.html'">
+        Next round
+      </button>
+    </div>
+  </div>
+
+  <!-- Alert up -->
+  <div id="upAlert" class="overlay hidden">
+    <div class="overlay-content">
+      <h3 id="alertMessage"></h3>
+      <!-- will be filled using js, for the specific use case-->
+      <button id="closeAlertBtn" class="btn alert-btn">Close</button>
+    </div>
+  </div>
+
+  <script type="module" src="finale.js"></script>
+</body>
+
+</html>
+

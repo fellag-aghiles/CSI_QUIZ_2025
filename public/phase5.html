@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Game</title>
+  <link rel="stylesheet" href="phase5.css" />
+</head>
+
+<body>
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="back2.mp4" type="video/mp4" />
+    Ton navigateur ne supporte pas la vidéo HTML5.
+  </video>
+  <!-- Top Bar -->
+  <!-- Logo Section (Center) -->
+  <div class="logo-container">
+    <img src="csi.png" class="logo" />
+  </div>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Left Side: Teams and Question -->
+    <div class="main-right">
+      <!-- Teams Section -->
+      <div class="teams-section">
+        <div id="teamButtons">
+          <!-- Teams will be generated here -->
+        </div>
+      </div>
+
+      <!-- Question Container -->
+      <section class="question-container">
+        <div style="margin-top: -12%;">        <h1 >Finale</h1>
+        </div>
+        <!-- Winners and Losers Section -->
+        <!-- Winners and Losers Section -->
+        <div id="resultsSection" class="results-section hidden">
+          <div class="winners">
+            <h3>Winners:</h3>
+            <ul id="winnerList">
+              <!-- Winners will be listed here -->
+            </ul>
+          </div>
+          <div class="losers">
+            <h3>Losers:</h3>
+            <ul id="loserList">
+              <!-- Losers will be listed here -->
+            </ul>
+          </div>
+        </div>
+
+        <!--displayed questions-->
+
+          <!-- Quiz Section -->
+              <div class="search-container">
+                  <input type="text" id="question-id" placeholder="Entrez l'ID de la question">
+                
+              </div>
+
+            
+            <div style="position: relative; font-size: 195%;" >
+              <h2 class="box-title">Question</h2>
+              <div id="question-text" style="display: inline-block;">Aucune question sélectionnée</div>
+              
+              <!-- Top right image -->
+              <img src="Somalia.png" id="imageCountry" class= "hidden" width="128px" height="80px" alt=""
+                   style="position: absolute; top: 3rem; right: 3rem; border-radius: 10%;">
+          </div>
+<br>
+              <div >
+                  <h2 class="box-title">Choix</h2>
+                  
+                  <!-- Sélection du nombre de choix -->
+                  <div  id="choice-select">
+                      <h3>Sélectionnez le nombre de choix:</h3>
+
+                      <button class="choice-type-btn" data-choices="0" class="custom-btn btn-3">Cache (5 pts)</button>
+                      <button class="choice-type-btn" data-choices="2" class="custom-btn btn-3"> Duo (1 pt)</button>
+                      <button class="choice-type-btn" data-choices="4" class="custom-btn btn-3">Carré (3 pts)</button>
+                  </div>
+                  
+                  <!-- Conteneur des choix qui apparaîtront après la sélection -->
+                  <div id="choices-container" style="display: none;">
+                      Aucun choix disponible
+                  </div>
+                  
+              </div>
+
+              <button id="winner-btn" >Afficher l'équipe gagnante</button>
+          </div>
+
+    <!-- Right Side: Timer and Scoreboard -->
+    <div class="timer-scoreboard-container">
+      <div class="timer-section">
+        <div class="timer-display">
+          <!-- the samll rest button, you can change the image if u didnt like it-->
+          <button id="resetTimer" class="tiny-reset" title="Quick Reset">
+            <img src="reset.png" width="30px" height="30px" alt="" />
+          </button>
+          <div class="timer-circle-wrapper">
+            <!-- timer circle-->
+            <div class="timer-circle">
+              <span id="timer">30</span>
+              <!-- timer text will change using js-->
+            </div>
+          </div>
+
+          <button id="startStopBtn" class="btn-timer">Goo!!</button>
+          <!-- start and stop button-->
+        </div>
+      </div>
+
+      <!-- Scoreboard -->
+      <section class="scoreboard">
+        <h2>Résultats</h2>
+        <ul id="teamList">
+          <!-- Team scores will be generated here -->
+        </ul>
+      </section>
+    </div>
+  </div>
+
+
+  <!-- Alert up -->
+  <div id="upAlert" class="overlay hidden">
+    <div class="overlay-content">
+      <h3 id="alertMessage"></h3>
+      <!-- will be filled using js, for the specific use case-->
+      <button id="closeAlertBtn" class="btn alert-btn">Close</button>
+    </div>
+  </div>
+
+  <script type="module" src="phase5.js"></script>
+</body>
+
+</html>
+
